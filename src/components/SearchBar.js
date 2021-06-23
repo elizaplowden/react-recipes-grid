@@ -8,16 +8,25 @@ class SearchBar extends React.Component {
 
   // }
 
+  onFormSubmit(e) {
+    // prevent browser from automatically submitting the form
+    e.preventDefault();
+
+    console.log(this.state.term);
+  }
+
   render() {
     return (
       <div className="ui segment">
-        <form className="ui form">
+        <form
+          onSubmit={this.onFormSubmit}
+          className="ui form">
           <div className="field">
             <label>Recipe Search</label>
             <input
               type="text"
               value={this.state.term}
-              onChange={(e) => this.setState({term: e.target.value})}
+              onChange={(e) => this.setState({ term: e.target.value })}
             />
           </div>
         </form>
