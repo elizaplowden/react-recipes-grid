@@ -12,7 +12,7 @@ class SearchBar extends React.Component {
     // prevent browser from automatically submitting the form
     e.preventDefault();
 
-    this.props.onSubmit(this.state.term)
+    this.props.onSubmit(this.state.term);
   }
 
   render() {
